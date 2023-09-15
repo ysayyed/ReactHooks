@@ -1,4 +1,4 @@
-# React Hooks usage with examples
+## React Hooks usage with examples
 
 > Covered Hooks:
 
@@ -15,7 +15,10 @@
 - useId
 
 > Codes for the following topics: 
-- [x] How to use useState Hook with onChange event listener.
+- [x] How to use useState hook with onChange event listener.
+- [x] How to use useState hook based on previous value, Example: increment / decrement counter.
 - [x] How to send data from Child to Parent, using useState and props.
 
-## Author: Sayyed Muhammed Yaseen
+### Note :  I have used styled components library to use Component based styling. You can also use normal css though. 
+
+### Author: Sayyed Muhammed Yaseen

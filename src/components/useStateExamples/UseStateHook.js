@@ -11,9 +11,18 @@ const Input = styled.input`
 	}
 `;
 
+const Code = styled.code`
+    background: whitesmoke;
+    padding: 7px;
+    color: crimson;
+    font-weight: bolder;
+    border-radius: 10px;
+`
 const Paragraph = styled.p`
 	margin: 20px 0 0 20px;
+    font-weight: bold;
 `
+
 
 
 export default function UseStateHook(props) {
@@ -24,6 +33,7 @@ export default function UseStateHook(props) {
 
 	return (
 		<div>
+			<Paragraph>An Example to show How to use <Code>useState</Code>. </Paragraph>
 			<Input onChange={nameHandler} placeholder='Enter your name' />
 			<Paragraph>{name}</Paragraph>			
 		</div>
