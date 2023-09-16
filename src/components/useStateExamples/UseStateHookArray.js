@@ -42,7 +42,7 @@ export default function UseStateHookArray() {
 	return (
 		<>
 			<Paragraph>Use of <Code>useState</Code> hook for arrays.</Paragraph>
-			<Paragraph># Updating array by pushing recent input values. </Paragraph>
+			<Paragraph># Updating array <i>list here</i> by pushing recent input values. </Paragraph>
 			<Paragraph># Also watch the dynamic list in action.</Paragraph>
 			<Input type="text" onChange={inputHandler} />
 			<br />

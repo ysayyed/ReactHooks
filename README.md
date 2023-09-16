@@ -14,11 +14,13 @@
 - useDeferredValue
 - useId
 
-> Codes for the following topics: 
+> Covered topics:
+
 - [x] How to use useState hook with onChange event listener.
 - [x] How to use useState hook based on previous value, Example: increment / decrement counter.
 - [x] How to send data from Child to Parent, using useState and props.
+- [x] How to use useState hook for arrays. [showcased by using dynamic list]
 
-### Note :  I have used styled components library to use Component based styling. You can also use normal css though. 
+### Note : I have used styled components library to use Component based styling. You can also use normal css though.
 
 ### Author: Sayyed Muhammed Yaseen
