@@ -39,6 +39,10 @@ export default function UseStateHookArray() {
 	function arrayHandler() {
 		setArray([...array, val])
 	}
+	function delHandler(index){
+		array.splice(index, 1);
+		setArray([...array])
+	}
 	return (
 		<>
 			<Paragraph>Use of <Code>useState</Code> hook for arrays.</Paragraph>
@@ -48,8 +52,10 @@ export default function UseStateHookArray() {
 			<br />
 			<Button onClick={arrayHandler}>Submit</Button> <br />
 			<ul>
-				{array.length > 0 ? array.map(item => <li>{item}</li>) : <li>None</li>}
+				{array.length > 0 ? array.map((item, index) => <li key={index}>{item} <Button onClick={()=>delHandler(index)}>Delete</Button> </li>) : <li>None</li>}
 			</ul>
+			
+
 		</>
 	)
 }
