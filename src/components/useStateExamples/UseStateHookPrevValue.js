@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { Paragraph, Code, Button } from '../styledComponents/StyledComponents';
+
 const Input = styled.input`
 	height: 30px;
 	width: 100px;
@@ -13,26 +15,6 @@ const Input = styled.input`
         -webkit-appearance: none;
     }
 `;
-
-
-const Button = styled.button`
-    margin: 20px 0 0px 60px;
-    width: 30px;
-    height: 30px;
-`
-
-const Code = styled.code`
-    background: whitesmoke;
-    padding: 7px;
-    color: crimson;
-    font-weight: bolder;
-    border-radius: 10px;
-`
-const Paragraph = styled.p`
-	margin: 20px 0 0 20px;
-    font-weight: bold;
-`
-
 
 export default function UseStateHookPrevValue(){
     const [count, setCount] = useState(0)

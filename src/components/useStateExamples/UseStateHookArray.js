@@ -1,32 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
-
-const Input = styled.input`
-	height: 30px;
-	width: 200px;
-	margin: 20px 0 0 20px;
-
-	&:focus{
-		background-color: aliceblue;
-	}
-`;
-
-const Code = styled.code`
-    background: whitesmoke;
-    padding: 7px;
-    color: crimson;
-    font-weight: bolder;
-    border-radius: 10px;
-`
-const Paragraph = styled.p`
-	margin: 20px 0 0 20px;
-    font-weight: bold;
-`
-
-const Button = styled.button`
-	margin: 20px 0 0 20px;
-    font-weight: bold;
-`
+import { Paragraph, Button, Code, Input } from "../styledComponents/StyledComponents";
+import { styled } from "styled-components";
 
 
 export default function UseStateHookArray() {

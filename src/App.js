@@ -1,20 +1,33 @@
 import { useState } from 'react'
-import styled from 'styled-components'
 import UseStateHook from '../src/components/useStateExamples/UseStateHook'
 import UseStateHookChildToParent from './components/useStateExamples/UseStateHookChildToParent'
 import UseStateHookPrevValue from './components/useStateExamples/UseStateHookPrevValue'
 import UseStateHookArray from './components/useStateExamples/UseStateHookArray'
-
-const Paragraph = styled.p`
-	margin: 20px 0 0 20px;
-`;
+import ArrayToParent from './components/useStateExamples/ArrayToParent'
+import { Paragraph, Code, Button, ArrayBlock } from './components/styledComponents/StyledComponents'
 
 function App() {
-  return (
+
+  const [array, setArray] = useState([])
+  function getArray(childArray){
+    setArray([...array, childArray])
+  }
+
+  function delHandler(index){
+    array.splice(index,1)
+    setArray([...array])
+  }
+  return(
     <>
-      <UseStateHookArray />
+    <ArrayToParent queryChild={getArray}/>
+    <Paragraph> <Code>Parent</Code> component</Paragraph>
+    <div style={{margin: "15px", textAlign: "justify"}}> 
+      <b>&#40;{array.map((element, index)=>{return <div><ArrayBlock key={index}>{element}</ArrayBlock> <Button onClick={()=>delHandler(index)}>Delete</Button></div> })}&#41;</b>   
+
+    </div>
     </>
   )
+ 
 }
 
 export default App;
@@ -52,4 +65,14 @@ export default App;
 
 // return (
 //   <UseStateHookPrevValue />
+// )
+
+// ****************************************************************************
+// Uncomment following return block to use UseStateHookArray component:
+// ****************************************************************************
+
+// return (
+//   <>
+//     <UseStateHookArray />
+//   </>
 // )
