@@ -1,33 +1,24 @@
 import { useState } from 'react'
-import UseStateHook from '../src/components/useStateExamples/UseStateHook'
-import UseStateHookChildToParent from './components/useStateExamples/UseStateHookChildToParent'
-import UseStateHookPrevValue from './components/useStateExamples/UseStateHookPrevValue'
-import UseStateHookArray from './components/useStateExamples/UseStateHookArray'
-import ArrayToParent from './components/useStateExamples/ArrayToParent'
 import { Paragraph, Code, Button, ArrayBlock } from './components/styledComponents/StyledComponents'
+import  {ObjectToParent, ArrayToParent, UseStateHook, UseStateHookArray, UseStateHookChildToParent, UseStateHookPrevValue} from './components/useStateExamples/index'
 
 function App() {
+  const [obj, setObj] = useState({name:'', email:''})
 
-  const [array, setArray] = useState([])
-  function getArray(childArray){
-    setArray([...array, childArray])
+  function objHandler(obj){
+    setObj({
+      name: obj.name,
+      email: obj.email
+    })
   }
 
-  function delHandler(index){
-    array.splice(index,1)
-    setArray([...array])
-  }
   return(
     <>
-    <ArrayToParent queryChild={getArray}/>
-    <Paragraph> <Code>Parent</Code> component</Paragraph>
-    <div style={{margin: "15px", textAlign: "justify"}}> 
-      <b>&#40;{array.map((element, index)=>{return <div><ArrayBlock key={index}>{element}</ArrayBlock> <Button onClick={()=>delHandler(index)}>Delete</Button></div> })}&#41;</b>   
-
-    </div>
+    <ObjectToParent receiveObj = {objHandler} />
+    <ArrayBlock>Received Object &#123; Name: {obj.name != '' ? obj.name : 'None'},  Email : {obj.email != '' ? obj.email : 'None'} &#125;</ArrayBlock>
     </>
   )
- 
+
 }
 
 export default App;
@@ -44,7 +35,7 @@ export default App;
 //   );
 
 // ****************************************************************************
-// Uncomment following return block to use UseStateHookChildToParent component:
+// Uncomment following to use UseStateHookChildToParent component:
 // ****************************************************************************
 
 // const [name, setName] = useState("")
@@ -68,7 +59,7 @@ export default App;
 // )
 
 // ****************************************************************************
-// Uncomment following return block to use UseStateHookArray component:
+// Uncomment & copy the following return block to use UseStateHookArray component:
 // ****************************************************************************
 
 // return (
@@ -76,3 +67,29 @@ export default App;
 //     <UseStateHookArray />
 //   </>
 // )
+
+
+
+// ****************************************************************************
+// Uncomment & copy the following to use ArrayToParent component:
+// ****************************************************************************
+
+// const [array, setArray] = useState([])
+//   function getArray(childArray){
+//     setArray([...array, childArray])
+//   }
+
+//   function delHandler(index){
+//     array.splice(index,1)
+//     setArray([...array])
+//   }
+//   return(
+//     <>
+//     <ArrayToParent queryChild={getArray}/>
+//     <Paragraph> <Code>Parent</Code> component</Paragraph>
+//     <div style={{margin: "15px", textAlign: "justify"}}> 
+//       <b>&#40;{array.map((element, index)=>{return <div key={index}><ArrayBlock >{element}</ArrayBlock> <Button onClick={()=>delHandler(index)}>Delete</Button></div> })}&#41;</b>   
+
+//     </div>
+//     </>
+//   )

@@ -3,7 +3,7 @@ import { Paragraph, Input, Code, Button } from "../styledComponents/StyledCompon
 
 
 
-export default function ArrayToParent(props){
+export function ArrayToParent(props){
 
     const [array, setArray] = useState()
 	const [val, setVal] = useState('')

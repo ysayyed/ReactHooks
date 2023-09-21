@@ -3,7 +3,7 @@ import { Paragraph, Button, Code, Input } from "../styledComponents/StyledCompon
 import { styled } from "styled-components";
 
 
-export default function UseStateHookArray() {
+export function UseStateHookArray() {
 	const [array, setArray] = useState([])
 	const [val, setVal] = useState()
 

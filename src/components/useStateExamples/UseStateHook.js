@@ -3,7 +3,7 @@ import { Paragraph, Input, Code } from '../styledComponents/StyledComponents'
 
 
 
-export default function UseStateHook(props) {
+export function UseStateHook(props) {
 	const [name, setName] = useState("")
 	function nameHandler(event) {
 		setName(event.target.value)

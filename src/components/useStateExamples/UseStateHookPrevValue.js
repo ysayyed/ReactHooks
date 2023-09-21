@@ -16,7 +16,7 @@ const Input = styled.input`
     }
 `;
 
-export default function UseStateHookPrevValue(){
+export function UseStateHookPrevValue(){
     const [count, setCount] = useState(0)
 
     function decrementHandler(){
