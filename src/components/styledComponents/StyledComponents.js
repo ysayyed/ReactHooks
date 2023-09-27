@@ -1,4 +1,4 @@
-import {styled} from 'styled-components'
+import { styled } from 'styled-components'
 
 export const Input = styled.input`
 	height: 30px;
@@ -36,4 +36,24 @@ export const ArrayBlock = styled.code`
         background: salmon; 
         cursor: pointer;
     }
+`
+
+export const Table = styled.table`
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-size: 20px;
+    margin: 20px 0 0 20px;
+`
+
+export const TableHead = styled.th`
+    background: palevioletred;
+    border: 1px solid black;
+    font-weight: bold;
+    border-collapse: collapse;
+`
+export const Column = styled.td`
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+    border-collapse: collapse;
 `

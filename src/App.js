@@ -1,24 +1,46 @@
 import { useState } from 'react'
-import { Paragraph, Code, Button, ArrayBlock } from './components/styledComponents/StyledComponents'
-import  {ObjectToParent, ArrayToParent, UseStateHook, UseStateHookArray, UseStateHookChildToParent, UseStateHookPrevValue} from './components/useStateExamples/index'
+// import { Paragraph, Code, Button, ArrayBlock } from './components/styledComponents/StyledComponents'
+// import  {ObjectToParent, ArrayToParent, UseStateHook, UseStateHookArray, UseStateHookChildToParent, UseStateHookPrevValue} from './components/useStateExamples/index'
+
+import  UseRefHook  from "./components/useRefExamples/UseRefHook";
+import { Paragraph, Code, Table, TableHead, Column } from './components/styledComponents/StyledComponents';
 
 function App() {
-  const [obj, setObj] = useState({name:'', email:''})
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  function objHandler(obj){
-    setObj({
-      name: obj.name,
-      email: obj.email
-    })
+  function dataHandler(obj){
+    setEmail(obj.email)
+    setPassword(obj.password)
   }
 
   return(
-    <>
-    <ObjectToParent receiveObj = {objHandler} />
-    <ArrayBlock>Received Object &#123; Name: {obj.name != '' ? obj.name : 'None'},  Email : {obj.email != '' ? obj.email : 'None'} &#125;</ArrayBlock>
-    </>
+    <div>
+    <Paragraph>Using <Code>useRef</Code> hook with simple data submission:</Paragraph>
+    <UseRefHook sendData = {dataHandler} />
+    <Table>
+      {/* tbody tag is important because we are updating state of tr and td here */}
+      <tbody>
+      <tr>
+        <TableHead>Particulars</TableHead>
+        <TableHead>Data</TableHead>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+        <Column>Submitted Email</Column>
+        <Column>{email ? email : 'Not submitted yet!'}</Column>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+        <Column>Submitted Password</Column>
+        <Column>{password ? password : 'Not submitted yet!'}</Column>
+      </tr>
+      </tbody>
+    </Table>
+    </div>
   )
-
 }
 
 export default App;
@@ -93,3 +115,24 @@ export default App;
 //     </div>
 //     </>
 //   )
+
+// ****************************************************************************
+// Uncomment & copy the following to use ObjectToParent component:
+// ****************************************************************************
+
+
+// const [obj, setObj] = useState({name:'', email:''})
+
+// function objHandler(obj){
+//   setObj({
+//     name: obj.name,
+//     email: obj.email
+//   })
+// }
+
+// return(
+//   <>
+//   <ObjectToParent receiveObj = {objHandler} />
+//   <ArrayBlock>Received Object &#123; Name: {obj.name != '' ? obj.name : 'None'},  Email : {obj.email != '' ? obj.email : 'None'} &#125;</ArrayBlock>
+//   </>
+// )
