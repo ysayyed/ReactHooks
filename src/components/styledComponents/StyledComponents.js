@@ -57,3 +57,7 @@ export const Column = styled.td`
     font-size: 15px;
     border-collapse: collapse;
 `
+
+export const DropZone = styled.input`
+
+`

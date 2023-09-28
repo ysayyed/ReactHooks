@@ -21,7 +21,8 @@
   - How to send data from Child to Parent, using useState and props.
   - How to use useState hook for arrays. [showcased by using dynamic list]
   - How to use useState hook to append in arrays, and delete an item from array.
-  - How to use useState hook for objects. 
+  - How to use useState hook for objects.
+  - How to use useState hook to preview image which is to be uploaded . 
 
 * ### useRef
   - How to use useRef hook instead of useState for data submission on click event.
