@@ -16,21 +16,21 @@ const Input = styled.input`
     }
 `;
 
-export function UseStateHookPrevValue(){
+export default function UseStateHookPrevValue() {
     const [count, setCount] = useState(0)
 
-    function decrementHandler(){
+    function decrementHandler() {
         setCount(prevCount => prevCount - 1)
     }
 
-    function incrementHandler(){
+    function incrementHandler() {
         setCount(prevCount => prevCount + 1)
     }
 
-    return(
+    return (
         <div>
             <Paragraph>An Example to show How to use <Code>useState</Code> hook with previous value. </Paragraph>
-            <Input type="number" onChange={(e)=>setCount(e.target.value)} value={count}/> <br/>
+            <Input type="number" onChange={(e) => setCount(e.target.value)} value={count} /> <br />
             <Button onClick={decrementHandler}> - </Button>
             <Button onClick={incrementHandler}> + </Button>
         </div>

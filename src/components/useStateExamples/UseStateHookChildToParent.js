@@ -1,7 +1,7 @@
 
 import { Paragraph, Input, Code } from "../styledComponents/StyledComponents"
 
-export function UseStateHookChildToParent(props) {
+export default function UseStateHookChildToParent(props) {
 
 	function nameHandler(event) {
 		props.sendData(event.target.value)

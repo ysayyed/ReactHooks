@@ -3,7 +3,7 @@ import { Paragraph, Button, Code, Input } from "../styledComponents/StyledCompon
 import { styled } from "styled-components";
 
 
-export function UseStateHookArray() {
+export default function UseStateHookArray() {
 	const [array, setArray] = useState([])
 	const [val, setVal] = useState()
 
@@ -13,7 +13,7 @@ export function UseStateHookArray() {
 	function arrayHandler() {
 		setArray([...array, val])
 	}
-	function delHandler(index){
+	function delHandler(index) {
 		array.splice(index, 1);
 		setArray([...array])
 	}
@@ -26,9 +26,9 @@ export function UseStateHookArray() {
 			<br />
 			<Button onClick={arrayHandler}>Submit</Button> <br />
 			<ul>
-				{array.length > 0 ? array.map((item, index) => <li key={index}>{item} <Button onClick={()=>delHandler(index)}>Delete</Button> </li>) : <li>None</li>}
+				{array.length > 0 ? array.map((item, index) => <li key={index}>{item} <Button onClick={() => delHandler(index)}>Delete</Button> </li>) : <li>None</li>}
 			</ul>
-			
+
 
 		</>
 	)
