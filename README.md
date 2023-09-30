@@ -30,6 +30,7 @@
   - How to use useRef hook instead of useState for data submission on click event.
 - ### useEffect
   - How to use useEffect hook without dependencies to render once and multiple times.
+  - How to use useEffect hook with single dependency.
 
 ### Note : I have used styled components library to use Component based styling. You can also use normal css though.
 

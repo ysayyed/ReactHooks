@@ -1,20 +1,41 @@
+// ***************************************************************
+// Uncomment the following to use UseEffectCounter component:
+// ***************************************************************
+import { UseEffectCounter } from "./components/useEffectExamples/UseEffectCounter"
+
+export default function App(){
+  return (
+  <>
+
+  <UseEffectCounter/>
+  </>
+  )
+}
+
+
+
+
+
+
+
+
 
 // ***************************************************************
 // Uncomment the following to use UseEffectHook component:
 // ***************************************************************
 
-import { UseEffectHook } from "./components/useEffectExamples/UseEffectHook";
+// import { UseEffectHook } from "./components/useEffectExamples/UseEffectHook";
 
 
-function App() {
-  return (
-    <>
-      <UseEffectHook />
-    </>
-  )
-}
+// function App() {
+//   return (
+//     <>
+//       <UseEffectHook />
+//     </>
+//   )
+// }
 
-export default App;
+// export default App;
 
 
 // ***************************************************************
