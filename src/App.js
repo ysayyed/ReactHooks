@@ -1,13 +1,21 @@
-// ***************************************************************
-// Uncomment the following to use UseEffectCounter component:
-// ***************************************************************
-import { UseEffectCounter } from "./components/useEffectExamples/UseEffectCounter"
+
+import { useState } from "react"
+import { UseEffectLogin } from "./components/useEffectExamples/UseEffectLogin"
+import { Paragraph, Code } from "./components/styledComponents/StyledComponents"
 
 export default function App(){
+  const [isValidForm, setIsValidForm] = useState(false)
+
+  function getValidStatus(isValid){
+    setIsValidForm(isValid)
+  }
+
   return (
   <>
-
-  <UseEffectCounter/>
+  <Paragraph>Example of <Code>useEffect</Code> with dual dependencies & dynamic  <Code style={{color: "green"}}>CSS</Code></Paragraph>
+  <UseEffectLogin getStatus={getValidStatus}/>
+  {isValidForm && <Paragraph>Your login is <Code style={{color: "green"}}>Successful</Code>.</Paragraph>}
+  {!isValidForm && <Paragraph>You are not <Code style={{color: "red"}}>Logged in</Code>.</Paragraph>}
   </>
   )
 }
@@ -17,8 +25,19 @@ export default function App(){
 
 
 
+// ***************************************************************
+// Uncomment the following to use UseEffectCounter component:
+// ***************************************************************
+// import { UseEffectCounter } from "./components/useEffectExamples/UseEffectCounter"
 
+// export default function App(){
+//   return (
+//   <>
 
+//   <UseEffectCounter/>
+//   </>
+//   )
+// }
 
 // ***************************************************************
 // Uncomment the following to use UseEffectHook component:

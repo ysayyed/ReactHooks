@@ -31,6 +31,7 @@
 - ### useEffect
   - How to use useEffect hook without dependencies to render once and multiple times.
   - How to use useEffect hook with single dependency.
+  - How to use useEffect hook with dual dependency and how to render fields dynamically.
 
 ### Note : I have used styled components library to use Component based styling. You can also use normal css though.
 
